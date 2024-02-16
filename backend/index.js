@@ -6,11 +6,13 @@ const userRoutes = require("./routes/userRoutes");
 const { errorHandler } = require("./middleware/errorMiddleware");
 const connectDB = require("./config/db");
 const colors = require("colors");
+const cors = require("cors");
 
 // * Initializations
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 dotenv.config();
 
 // * Database connection
